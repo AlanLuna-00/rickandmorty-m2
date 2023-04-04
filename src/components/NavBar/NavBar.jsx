@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import SearchBar from '../SearchBar'
 import './NavBar.css'
 
@@ -12,8 +12,8 @@ const NavBar = ({ onSearch, randomCharacter }) => {
                 </div>
             </div>
             <div className='navbar-links'>
-                <Link  to='/'>Home</Link>
-                <Link to='/about'>About</Link>
+                <NavLink className={({isActive}) => isActive ? '.active' : '.disabled'} to='/home'>Home</NavLink>
+                <NavLink className={({isActive}) => isActive ? '.active' : '.disabled'} to='/about'>About</NavLink>
                 <SearchBar onSearch={onSearch} randomCharacter={randomCharacter} />
             </div>
         </nav>

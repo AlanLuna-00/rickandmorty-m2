@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 export default function SearchBar(props) {
    const [Id, setId] = useState('');
 
+   
    return (
       <div className='searchBar'>
          <button onClick={() => props.randomCharacter()} className="search-button-2">Random Character</button>

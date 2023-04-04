@@ -1,0 +1,100 @@
+.detail-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.detail-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(19, 17, 17);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    width: 400px;
+    animation: fadeIn 1s;
+}
+
+.detail-card img {
+    width: 100%;
+    width: 400px;
+    height: auto;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+.detail-card-info {
+    text-align: center;
+    color: #444444;
+}
+
+.detail-card-info h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+    color: #222222;
+}
+
+.detail-card-info h2 {
+    font-size: 24px;
+    font-weight: 400;
+    margin-bottom: 20px;
+    color: #222222;
+}
+
+.detail-card-info p {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #555555;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.detail-card.dead {
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0px 0px 0px 0px rgba(255, 0, 0, 0.7);
+    }
+
+    70% {
+        box-shadow: 0px 0px 0px 30px rgba(255, 0, 0, 0);
+    }
+
+    100% {
+        box-shadow: 0px 0px 0px 0px rgba(255, 0, 0, 0);
+    }
+}
+
+.detail-card.alive {
+    border: 2px solid #00FF00;
+    animation: alive 2s ease-in-out infinite alternate;
+}
+
+@keyframes alive {
+    0% {
+        transform: rotate(0deg);
+        border-radius: 10px;
+    }
+
+    50% {
+        transform: rotate(3deg);
+        border-radius: 15px;
+    }
+
+    100% {
+        transform: rotate(0deg);
+        border-radius: 10px;
+    }
+}

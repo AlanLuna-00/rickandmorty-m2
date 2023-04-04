@@ -3,6 +3,7 @@ import Cards from './components/Cards.jsx';
 import { useState } from 'react';
 import NavBar from './components/NavBar/NavBar.jsx';
 import { Routes, Route } from 'react-router-dom';
+import Detail from './components/Detail/Detail.jsx';
 
 function App() {
   const [Characters, setCharacters] = useState([]);
@@ -12,7 +13,7 @@ function App() {
       .then((res) => res.json())
       .then((data) => {
         if (Characters.find((value) => value.id === data.id)) {
-          alert('Character already added');
+          alert('El personaje con ese id ya fue agregado');
         } else {
           setCharacters([...Characters, data]);
         }
@@ -29,7 +30,7 @@ function App() {
       .then((res) => res.json())
       .then((data) => {
         if (Characters.find((value) => value.id === data.id)) {
-          alert('El personaje ya fue agregado');
+          alert('El personaje random ya fue agregado');
         } else {
           setCharacters([...Characters, data]);
         }
@@ -40,8 +41,9 @@ function App() {
     <div className="App">
       <NavBar onSearch={onSearch} randomCharacter={randomCharacter} />
       <Routes>
-        <Route path="/" element={<Cards characters={Characters} onClose={onClose} />} />
+        <Route path="/home" element={<Cards characters={Characters} onClose={onClose} />} />
         <Route path="/about" element={<h1>About</h1>} />
+        <Route path="/detail/:id" element={<Detail />} />
       </Routes>
     </div>
   );
