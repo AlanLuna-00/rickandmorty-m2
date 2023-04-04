@@ -1,0 +1,96 @@
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+}
+
+
+
+nav form {
+    display: flex;
+    align-items: center;
+}
+
+nav input[type="text"] {
+    border: none;
+    padding: 8px;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
+nav button[type="submit"] {
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+nav button[type="submit"]:hover {
+    background-color: #3e8e41;
+}
+
+.rick-and-morty {
+    font-size: 40px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    animation: changeColor 5s linear infinite alternate;
+}
+
+@keyframes changeColor {
+    0% {
+        color: #F44336;
+    }
+
+    25% {
+        color: #FFEB3B;
+    }
+
+    50% {
+        color: #4CAF50;
+    }
+
+    75% {
+        color: #2196F3;
+    }
+
+    100% {
+        color: #9C27B0;
+    }
+}
+
+.search-button-1 {
+    background-color: #000000;
+    color: white;
+    border: none;
+    padding: 5px 5px;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.search-button-1:hover {
+    background-color: #3E8E41;
+}
+
+.search-button-2 {
+    background-color: #000000;
+    color: white;
+    border: none;
+    padding: 5px 5px;
+    margin-right: 15px;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.search-button-2:hover {
+    background-color: #3E8E41;
+}

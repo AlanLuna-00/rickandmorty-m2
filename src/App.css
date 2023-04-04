@@ -1,38 +1,106 @@
 .App {
-  text-align: center;
+   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.container {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-around;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.card {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   width: 300px;
+   margin:20px;
+   border-radius: 10px;
+   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+   background-color: white;
+   overflow: hidden;
+   position: relative; 
 }
+ 
+ .card:hover {
+   transform: scale(1.05);
+   transition: ease 0.6s;
+ }
+ 
+ .card img {
+   width: 100%;
+   height: 70%;
+   object-fit: cover;
+   border-radius: 10px 10px 0 0;
+ }
+ 
+ .card h1 {
+   font-size: 2rem;
+   font-weight: bold;
+   text-align: center;
+   margin: 1rem 0;
+   color: #444;
+ }
+ 
+ .card h2 {
+   font-size: 1rem;
+   font-weight: normal;
+   text-align: center;
+   margin: 0.5rem 0;
+   color: #666;
+   position: relative; 
+ }
+ 
+ .card h2:before {
+   content: "";
+   display: inline-block;
+   width: 6px;
+   height: 6px;
+   margin-right: 5px;
+   border-radius: 50%;
+   position: absolute; 
+   left: -15px; 
+   top: 50%; 
+   transform: translateY(-50%);
+ }
+ 
+ .card .status:before {
+   background-color: green;
+ }
+ 
+ .card .gender:before {
+   background-color: purple;
+ }
+ 
+ .card .origin:before {
+   background-color: blue;
+ }
+ 
+ .card p {
+   font-size: 1rem;
+   font-weight: normal;
+   text-align: center;
+   margin: 0.5rem 0;
+   color: #666;
+ }
+ 
+ .card button {
+   font-size: 1rem;
+   font-weight: bold;
+   padding: 0.5rem 1rem;
+   background-color: rgb(0, 0, 0);
+   color: white;
+   border: none;
+   border-radius: 5px;
+   cursor: pointer;
+   position: absolute; 
+   top: 10px;
+   right: 10px;
+   transition: background-color 0.2s ease-in-out;
+ }
+ 
+ .card button:hover {
+   background-color: red;
+ }
+ 
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
