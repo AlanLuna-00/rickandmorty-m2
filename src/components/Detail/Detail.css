@@ -59,30 +59,11 @@
     }
 }
 
-.detail-card.dead {
-    animation: pulse 1s infinite;
+.detail-card {
+    animation: movement 2s ease-in-out infinite alternate;
 }
 
-@keyframes pulse {
-    0% {
-        box-shadow: 0px 0px 0px 0px rgba(255, 0, 0, 0.7);
-    }
-
-    70% {
-        box-shadow: 0px 0px 0px 30px rgba(255, 0, 0, 0);
-    }
-
-    100% {
-        box-shadow: 0px 0px 0px 0px rgba(255, 0, 0, 0);
-    }
-}
-
-.detail-card.alive {
-    border: 2px solid #00FF00;
-    animation: alive 2s ease-in-out infinite alternate;
-}
-
-@keyframes alive {
+@keyframes movement {
     0% {
         transform: rotate(0deg);
         border-radius: 10px;
@@ -96,5 +77,41 @@
     100% {
         transform: rotate(0deg);
         border-radius: 10px;
+    }
+}
+
+.detail-card.dead {
+    animation: pulseDead 1.5s infinite;
+}
+
+@keyframes pulseDead {
+    0% {
+        box-shadow: 0px 0px 0px 0px rgba(255, 0, 0, 0.7);
+    }
+
+    50% {
+        box-shadow: 0px 0px 0px 15px rgba(255, 0, 0, 0);
+    }
+
+    100% {
+        box-shadow: 0px 0px 0px 0px rgba(255, 0, 0, 0);
+    }
+}
+
+.detail-card.alive {
+    animation: pulseAlive 1.5s infinite;
+}
+
+@keyframes pulseAlive {
+    0% {
+        box-shadow: 0px 0px 0px 0px rgba(55, 255, 0, 0.7);
+    }
+
+    50% {
+        box-shadow: 0px 0px 0px 15px rgba(55, 255, 0, 0);
+    }
+
+    100% {
+        box-shadow: 0px 0px 0px 0px rgba(55, 255, 0, 0);
     }
 }
