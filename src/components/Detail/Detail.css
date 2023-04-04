@@ -2,7 +2,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
 }
 
 .detail-card {
@@ -15,6 +14,7 @@
     border-radius: 10px;
     width: 400px;
     animation: fadeIn 1s;
+    margin-top: 50px;
 }
 
 .detail-card img {
@@ -58,6 +58,7 @@
         opacity: 1;
     }
 }
+
 
 .detail-card {
     animation: movement 2s ease-in-out infinite alternate;

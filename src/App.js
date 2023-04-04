@@ -4,6 +4,7 @@ import { useState } from 'react';
 import NavBar from './components/NavBar/NavBar.jsx';
 import { Routes, Route } from 'react-router-dom';
 import Detail from './components/Detail/Detail.jsx';
+import About from './components/About/About';
 
 function App() {
   const [Characters, setCharacters] = useState([]);
@@ -42,7 +43,7 @@ function App() {
       <NavBar onSearch={onSearch} randomCharacter={randomCharacter} />
       <Routes>
         <Route path="/home" element={<Cards characters={Characters} onClose={onClose} />} />
-        <Route path="/about" element={<h1>About</h1>} />
+        <Route path="/about" element={<About />} />
         <Route path="/detail/:id" element={<Detail />} />
       </Routes>
     </div>
