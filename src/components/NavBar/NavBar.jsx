@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom'
 import SearchBar from '../SearchBar'
 import './NavBar.css'
 
-const NavBar = ({ onSearch, randomCharacter }) => {
+const NavBar = ({ onSearch, randomCharacter, logout }) => {
     return (
         <nav className='navbar'>
             <div className='navbar-container'>
@@ -15,6 +15,8 @@ const NavBar = ({ onSearch, randomCharacter }) => {
                 <NavLink className={({isActive}) => isActive ? '.active' : '.disabled'} to='/home'>Home</NavLink>
                 <NavLink className={({isActive}) => isActive ? '.active' : '.disabled'} to='/about'>About</NavLink>
                 <SearchBar onSearch={onSearch} randomCharacter={randomCharacter} />
+                {/* logout button */}
+                <button className='logout-button' onClick={logout}><i class="fa fa-sign-out" style={{fontSize : '26px'}}></i></button>
             </div>
         </nav>
     )
