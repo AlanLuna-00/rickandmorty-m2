@@ -1,27 +1,33 @@
-const validation = (values) => {
-    let errors = {};
+const validation = (form, errors, setErrors) => {
+    const newErrors = {...errors}
     const EMAIL = 'alanluna@gmail.com';
     const PASSWORD = 'alan05';
-    
-    if (!values.email) {
-        errors.email = 'Es necesario un email';
-    } else if (/^[\w-.]+@([\w-]+\.)+[\w-]{4}$/g.test(values.email)) {
-        errors.email = 'Se requiere un email válido';
-    } else if (values.email !== EMAIL) {
-        errors.email = 'El email es incorrecto';
-    }
-    if (!values.password) {
-        errors.password = 'Es necesario ingresar una contraseña';
-    } else if (!/\d/.test(values.password)) {
-        errors.password = 'La contraseña debe contener al menos un número';
-    } else if (values.password.length < 6 || values.password.length > 8) {
-        errors.password = 'La contraseña debe tener entre 6 y 8 caracteres';
-    } else if (values.password !== PASSWORD) {
-        errors.password = 'La contraseña es incorrecta';
-    }
-    
-    return { email : errors.email, password : errors.password};
-}
 
+    if (!form.email) {
+      newErrors.email = "Se requiere email";
+    } else if (!/^[^\s@]+@[^\s@]+.[^\s@]+$/.test(form.email)) { 
+        newErrors.email = "Formato invalido";
+    } else if (form.email.length > 35) { 
+        newErrors.email = "Email nombre de usurio no puede tener mas de 35";
+    } else if (form.email !== EMAIL) {
+        newErrors.email = "Email incorrecto"
+    } else {
+        newErrors.email = ""
+    }
 
-export default validation;
+    if (!form.password) {
+      newErrors.password = "Ingrese contraseña"
+    } else if (!/\d/.test(form.password)) {
+        newErrors.password = "la contraseña tiene que tener al menos un número"
+    } else if (form.password.length < 5 || form.password.length > 11 ) {
+        newErrors.password = "La contraseña tiene que tener una longitud entre 6 y 10 caracteres"
+    } else if (form.password !== PASSWORD) {
+        newErrors.password = "Contraseña incorrecta"
+    } else { 
+        newErrors.password = ""
+    }
+
+    setErrors(newErrors)
+  };
+
+export default validation
