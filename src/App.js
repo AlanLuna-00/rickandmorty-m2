@@ -2,10 +2,12 @@ import './App.css';
 import Cards from './components/Cards.jsx';
 import { useState, useEffect } from 'react';
 import NavBar from './components/NavBar/NavBar.jsx';
-import { Routes, Route, useNavigate } from 'react-router-dom';
+import { Routes, Route, useNavigate, useLocation } from 'react-router-dom';
 import Detail from './components/Detail/Detail.jsx';
 import About from './components/About/About';
 import Form from './components/Form/Form';
+import Favorites from './components/Favorites/Favorites';
+import Footer from './components/Footer/Footer';
 
 function App() {
   const [Characters, setCharacters] = useState([]);
@@ -66,15 +68,19 @@ function App() {
         !access && navigate('/');
      }, [access, navigate]);
 
+    const location = useLocation();
+
   return (
     <div className="App">
-      <NavBar onSearch={onSearch} randomCharacter={randomCharacter} logout={logout} />
+      {location.pathname !== '/' && <NavBar onSearch={onSearch} randomCharacter={randomCharacter} logout={logout} />}
       <Routes>
         <Route path="/" element={<Form login={login}/>} />
         <Route path="/home" element={<Cards characters={Characters} onClose={onClose} />} />
         <Route path="/about" element={<About />} />
+        <Route path="/favorites" element={<Favorites />} />
         <Route path="/detail/:id" element={<Detail />} />
       </Routes>
+      {location.pathname !== '/' && <Footer className="footer">Alan Luna</Footer>}
     </div>
   );
 }

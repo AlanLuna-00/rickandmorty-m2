@@ -58,6 +58,70 @@
     animation: changeColor 5s linear infinite alternate;
 }
 
+@media only screen and (max-width: 850px) {
+    .rick-and-morty {
+        font-size: 28px;
+    }
+    /* navbar responsive */
+    .navbar {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .navbar-links {
+        width: 100%;
+        justify-content: center;
+        font-size: 16px;
+    }
+
+    .navbar-links>* {
+        margin-left: 10px;
+    }
+
+    .navbar-search {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .navbar-logo {
+        font-size: 20px;
+    }
+
+    .navbar-links {
+        display: flex;
+    }
+
+    .navlink {
+        font-size:16px;
+    }
+
+    /* search responsive */
+    .searchBar {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .search-input {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .search-button {
+        width: 100%;
+    }
+
+    .search-button-2 {
+        font-size: 16px;
+    }
+
+    .logout-button .fa  {
+        font-size: 12px;
+
+    }
+
+}
+
 @keyframes changeColor {
     0% {
         color: #F44336;
@@ -126,3 +190,10 @@
     background-color: #d32f2f;
   }
   
+/* navlink active css */
+
+.active {
+    background-color: rgb(25, 17, 71);
+    border-radius: 5px;
+    padding: 5px;
+}

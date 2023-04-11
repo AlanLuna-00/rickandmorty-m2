@@ -5,13 +5,16 @@
 }
 
 body {
-  background:  #090b1a;
-  background-size: cover;
-  background-repeat: no-repeat;
   font-family: 'Roboto', sans-serif;
-  color: #fff;
-  font-size: 16px;
-  height: 100vmax;
+}
+
+.App {
+  background-color:#090b1a;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  min-height: 100vh;
 }
 
 /* Agregamos un estilo de cursor personalizado usando la propiedad "url" y proporcionando una imagen */

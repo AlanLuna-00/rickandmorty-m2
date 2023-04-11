@@ -5,7 +5,7 @@ import validation from "./validation";
 const Form = ({ login }) => {
 
     const [form, setForm] = useState({
-        email: '',  
+        email: '',
         password: ''
     })
     const [errors, setErrors] = useState({})
@@ -17,8 +17,8 @@ const Form = ({ login }) => {
             ...form,
             [property]: value
         })
-        
-        validation({...form, [property]: value}, errors, setErrors)
+
+        validation({ ...form, [property]: value }, errors, setErrors)
     }
 
     const handleSubmit = (e) => {
@@ -29,6 +29,7 @@ const Form = ({ login }) => {
     return (
         <div className="login-page">
             <div className="form">
+                <h1 className="title-form">Rick And Morty App</h1>
                 <form onSubmit={handleSubmit} o className="register-form">
                     <input placeholder="username" className="formInput" type="text" name="email" value={form.email} onChange={handleChange} autoComplete='off' />
                     {errors.email && <p className="error">{errors.email}</p>}

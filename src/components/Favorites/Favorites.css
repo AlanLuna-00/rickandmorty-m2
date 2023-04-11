@@ -1,0 +1,21 @@
+.container-favorites {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    width: 60%;
+    margin: 0 auto;
+ }
+
+
+
+.favorites-title {
+    font-family: 'Arial', sans-serif;
+    font-size: 60px; /* Tamaño de fuente aumentado */
+    font-weight: bold; /* Fuente en negrita */
+    color: #ff6b6b; /* Color de texto rosa */
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+
+  
