@@ -31,19 +31,6 @@ function App() {
   const onClose = (id) => {
     setCharacters(Characters.filter((_value, i) => i !== parseInt(id)));
   };
-
-  const randomCharacter = () => {
-    let randomNum = Math.floor(Math.random() * 826) + 1;
-    fetch(`https://rickandmortyapi.com/api/character/${randomNum}`)
-      .then((res) => res.json())
-      .then((data) => {
-        if (Characters.find((value) => value.id === data.id)) {
-          alert('El personaje random ya fue agregado');
-        } else {
-          setCharacters([...Characters, data]);
-        }
-      });
-  };
   
   const navigate = useNavigate();
     const [access, setAccess] = useState(false);
@@ -75,7 +62,7 @@ function App() {
       {location.pathname !== '/' && <NavBar logout={logout} />}
       <Routes>
         <Route path="/" element={<Form login={login}/>} />
-        <Route path="/home" element={<Cards characters={Characters} onClose={onClose} onSearch={onSearch} randomCharacter={randomCharacter}  />} />
+        <Route path="/home" element={<Cards characters={Characters} onClose={onClose} onSearch={onSearch} />} />
         <Route path="/about" element={<About />} />
         <Route path="/favorites" element={<Favorites />} />
         <Route path="/detail/:id" element={<Detail />} />

@@ -11,10 +11,12 @@ export default function SearchBar(props) {
          e.preventDefault();
       }
    };
+
+   let randomNum = Math.floor(Math.random() * 826) + 1;
    
    return (
       <div className='searchBar bar-container'>
-         <button onClick={() => props.randomCharacter()} className="search-button-2">Random</button>
+         <button onClick={() => props.onSearch(randomNum)} className="search-button-2">Random</button>
          <input className='searchID' type='text' onKeyDown={handleKeyDown} placeholder='Search by ID' onChange={(e) => setId(e.target.value)} />
       </div>
    );
