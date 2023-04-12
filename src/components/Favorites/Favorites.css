@@ -18,4 +18,10 @@
   }
   
 
+  .favButton {
+    cursor: pointer;
+    padding: 5px;
+    background-color: white;
+  }
+
   

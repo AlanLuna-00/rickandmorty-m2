@@ -72,10 +72,10 @@ function App() {
 
   return (
     <div className="App">
-      {location.pathname !== '/' && <NavBar onSearch={onSearch} randomCharacter={randomCharacter} logout={logout} />}
+      {location.pathname !== '/' && <NavBar logout={logout} />}
       <Routes>
         <Route path="/" element={<Form login={login}/>} />
-        <Route path="/home" element={<Cards characters={Characters} onClose={onClose} />} />
+        <Route path="/home" element={<Cards characters={Characters} onClose={onClose} onSearch={onSearch} randomCharacter={randomCharacter}  />} />
         <Route path="/about" element={<About />} />
         <Route path="/favorites" element={<Favorites />} />
         <Route path="/detail/:id" element={<Detail />} />

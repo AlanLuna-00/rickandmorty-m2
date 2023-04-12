@@ -3,6 +3,8 @@ import './Card.css';
 import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { addFav, removeFav } from '../../redux/actions';
+import {  ToastContainer ,toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Card = (props) => {
 
@@ -29,6 +31,9 @@ const Card = (props) => {
       });
    }, [myFavorites, props.id]);
 
+   const addingFav = (name) => toast.success(`${name} agregado a favs ❤️`, {position: toast.POSITION.TOP_LEFT});
+   const removingFav = (name) => toast.error(`${name} eliminado de favs 💔`, {position: toast.POSITION.TOP_LEFT});
+
    return (
       <div className={`card-pj ${props.status === 'Alive' ? 'alive' : props.status === 'Dead' ? 'dead' : ''}`}>
          <img className="img" src={`${props.image}`} alt={`${props.name}`} />
@@ -40,11 +45,18 @@ const Card = (props) => {
          <button onClick={props.onClose} className="quit">X</button>
          {
             fav ? (
-               <button className='favButton isFav' onClick={handleFav}>💔</button>
+               <button className='favButton isFav' onClick={() => {
+                  handleFav()
+                  removingFav(props.name)
+               }}>❤️</button>
             ) : (
-               <button className='favButton isntFav' onClick={handleFav}>❤️</button>
+               <button className='favButton isntFav' onClick={() => {
+                  handleFav()
+                  addingFav(props.name)
+               }}>💔</button>
             )
          }
+         <ToastContainer />
       </div>
    );
 }

@@ -2,117 +2,57 @@
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.detail-card {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: rgb(19, 17, 17);
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
-    border-radius: 10px;
-    width: 400px;
-    animation: fadeIn 1s;
     margin-top: 50px;
-}
-
-.detail-card img {
-    width: 100%;
-    width: 400px;
-    height: auto;
-    margin-bottom: 20px;
+  }
+  
+  .detail-card {
+    display: flex;
+    width: 800px;
+    background-color: #2b2b2b;
     border-radius: 10px;
-}
-
-.detail-card-info {
-    text-align: center;
-    color: #444444;
-}
-
-.detail-card-info h1 {
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out; /* Animación de transformación en el hover */
+  }
+  
+  .detail-card:hover {
+    transform: scale(1.05); /* Aumentar el tamaño en el hover */
+  }
+  
+  .detail-card img {
+    width: 300px;
+    height: auto;
+    object-fit: cover;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+  }
+  
+  .detail-card-info {
+    padding: 40px;
+    color: #fff;
+  }
+  
+  .detail-card-info h1 {
     font-size: 36px;
-    margin-bottom: 10px;
-    color: #222222;
-}
-
-.detail-card-info h2 {
+    font-weight: bold;
+    margin-top: 0;
+  }
+  
+  .detail-card-info h2 {
     font-size: 24px;
-    font-weight: 400;
-    margin-bottom: 20px;
-    color: #222222;
-}
-
-.detail-card-info p {
-    font-size: 18px;
-    margin-bottom: 10px;
-    color: #555555;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
-}
-
-
-.detail-card {
-    animation: movement 2s ease-in-out infinite alternate;
-}
-
-@keyframes movement {
-    0% {
-        transform: rotate(0deg);
-        border-radius: 10px;
-    }
-
-    50% {
-        transform: rotate(3deg);
-        border-radius: 15px;
-    }
-
-    100% {
-        transform: rotate(0deg);
-        border-radius: 10px;
-    }
-}
-
-.detail-card.dead {
-    animation: pulseDead 1.5s infinite;
-}
-
-@keyframes pulseDead {
-    0% {
-        box-shadow: 0px 0px 0px 0px rgba(255, 0, 0, 0.7);
-    }
-
-    50% {
-        box-shadow: 0px 0px 0px 15px rgba(255, 0, 0, 0);
-    }
-
-    100% {
-        box-shadow: 0px 0px 0px 0px rgba(255, 0, 0, 0);
-    }
-}
-
-.detail-card.alive {
-    animation: pulseAlive 1.5s infinite;
-}
-
-@keyframes pulseAlive {
-    0% {
-        box-shadow: 0px 0px 0px 0px rgba(55, 255, 0, 0.7);
-    }
-
-    50% {
-        box-shadow: 0px 0px 0px 15px rgba(55, 255, 0, 0);
-    }
-
-    100% {
-        box-shadow: 0px 0px 0px 0px rgba(55, 255, 0, 0);
-    }
-}
+    font-weight: bold;
+    margin-top: 10px;
+  }
+  
+  .detail-card-info p {
+    font-size: 20px;
+    margin-top: 10px;
+  }
+  
+  .detail-card-info p:before {
+    content: "\2022"; /* Agregar viñetas en las listas */
+    color: #FF9800; /* Color naranja para las viñetas */
+    margin-right: 10px;
+  }
+  
+  

@@ -1,7 +1,10 @@
 import Card from './Card/Card';
+import SearchBar from './SearchBar/SearchBar';
 
-export default function Cards({characters, onClose}) {
-   return <div className='container'>
+export default function Cards({characters, onClose, onSearch, randomCharacter}) {
+   return( <>
+   <SearchBar onSearch={onSearch} randomCharacter={randomCharacter} />
+   <div className='container'>
       {characters.map((value, i) => {
          return <Card
             key={i}
@@ -16,4 +19,6 @@ export default function Cards({characters, onClose}) {
          />
       })}
    </div>;
+   </>
+   )
 }

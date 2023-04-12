@@ -20,11 +20,11 @@ export default function Detail() {
 
     return (
         <div className="detail-container">
-            <div className={`detail-card ${character.status === 'Alive' ? 'alive' : 'dead'}`}>
+            <div className={`detail-card ${character.status === 'Alive' ? 'detail-card-alive' : 'detail-card-dead'}`}>
                 <img src={character.image} alt={character.name} />
                 <div className="detail-card-info">
                     <h1>{character.name}</h1>
-                    <h2>{character.species} - {character.status}</h2>
+                    <h2>{character.species} - {character.status === 'unknown' ? 'Estado de vida desconocido' : character.status}</h2>
                     <p>Gender: {character.gender}</p>
                     <p>Origin: {character.origin?.name}</p>
                     <p>Location: {character.location?.name}</p>

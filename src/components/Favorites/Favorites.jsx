@@ -23,7 +23,7 @@ const Favorites = () => {
                         <h2 className="gender">{fav.gender} {fav.species}</h2>
                         <h2 className="origin">{fav.origin === 'unknown' ? 'Procedencia desconocida' : fav.origin}</h2>
                         <Link to={`/detail/${fav.id}`}><button className={fav.status === 'Dead' ? 'detail-dead' : fav.status === 'Alive' ? 'detail-alive' : 'detail'}>Detail</button></Link>
-                        <button onClick={() => handleRemoveFav(fav.id)} className="quit">💔</button>
+                        <button onClick={() => handleRemoveFav(fav.id)} className="favButton">❤️</button>
                     </div>
                 ))}
             </div>
