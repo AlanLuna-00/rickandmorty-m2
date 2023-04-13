@@ -125,3 +125,36 @@
     border-radius: 5px;
     padding: 5px;
 }
+
+
+.Toastify__toast {
+    display: flex;
+    flex-direction: column;
+}
+
+.custom-toast-buttons-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+  }
+  
+  .custom-toast-button {
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 10px 15px;
+    margin: 0 10px;
+    border: none;
+    color: #fff;
+    border-radius: 5px;
+    outline: none;
+  }
+  
+  .custom-toast-button-yes {
+    background-color: #3cb371; /* Color de fondo para el botón "Sí" */
+  }
+  
+  .custom-toast-button-no {
+    background-color: #ff4500; /* Color de fondo para el botón "No" */
+  }
+  

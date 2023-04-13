@@ -12,6 +12,7 @@ export default function Cards({characters, onClose, onSearch}) {
             name={value.name}
             status={value.status}
             species={value.species}
+            gender={value.gender}
             origin={value.origin.name}
             image={value.image}
             location={value.location.name}
