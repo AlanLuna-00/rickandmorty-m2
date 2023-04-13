@@ -4,13 +4,15 @@ import { Link } from "react-router-dom";
 import { removeFav } from "../../redux/actions";
 import "./Favorites.css";
 import { filterCards, orderCards } from "../../redux/actions";
+import toast, { Toaster } from 'react-hot-toast';
 
 const Favorites = () => {
   const favorites = useSelector((state) => state.myFavorites);
   const dispatch = useDispatch();
 
-  const handleRemoveFav = (id) => {
+  const handleRemoveFav = (id, name) => {
     dispatch(removeFav(id));
+    toast.error(`${name} eliminado de favs 💔`);
   };
 
   const handleFilterCards = (e) => {
@@ -95,11 +97,12 @@ const Favorites = () => {
               </button>
             </Link>
             <button
-              onClick={() => handleRemoveFav(fav.id)}
+              onClick={() => handleRemoveFav(fav.id, fav.name)}
               className="favButton"
             >
               ❤️
             </button>
+            <Toaster position='top-left' />
           </div>
         ))}
       </div>

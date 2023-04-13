@@ -6,17 +6,15 @@
 
 body {
   font-family: 'Roboto', sans-serif;
+  background-color: black;
+  background-image: url('./galaxy-stars.png');
+  height: 100vh;
 }
 
 .App {
-  background-color:#090b1a;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  min-height: 100vh;
+  /* image in src */
+  
 }
-
 /* Agregamos un estilo de cursor personalizado usando la propiedad "url" y proporcionando una imagen */
 
 

@@ -1,18 +1,17 @@
 .footer {
-    background-color: #f8f8f8;
+    background-color: #00000008;
+    backdrop-filter: blur(7px);
     padding: 10px;
     text-align: center;
     position: fixed;
     bottom: 0;
     width: 100%;
-    opacity: 1; /* Opacidad del footer para que no se vea inicialmente */
-    transition: opacity 0.5s ease; /* Transición de opacidad para suavizar la aparición/desaparición */
   }
 
   .footer p {
     margin: 0;
     font-size: 14px;
-    color: #666;
+    color: rgb(255, 255, 255);
   }
 
   .footer a {
@@ -26,7 +25,7 @@
 }
 
 .github {
-    color: #171515;
+    color: #ffffff;
     font-size: 24px;
 }
 
