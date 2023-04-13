@@ -12,7 +12,7 @@ export default function SearchBar(props) {
 
       if (e.key === 'Enter') {
          if (isString) {
-            toast.error('El dato proporcionado es invalido');
+            toast.error('El dato es invalido o ya fue agregado');
          } else {
             props.onSearch(Id);
          }
