@@ -1,28 +1,14 @@
-import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
 import "./Detail.css";
+import { useGetCharacter } from "../../hooks/useGetCharacter";
 
 export default function Detail() {
-  const { id } = useParams();
-
-  const parsedId = parseInt(id);
-
-  const [character, setCharacter] = useState({});
-
-  const URL = "https://be-a-rym.up.railway.app/api/character/";
-  const API_KEY = "1f7733c3f7cc.673ee192101ab1b561a7";
-
-  useEffect(() => {
-    fetch(`${URL}/${parsedId}?key=${API_KEY}`)
-      .then((res) => res.json())
-      .then((data) => {
-        setCharacter(data);
-      });
-  }, [parsedId]);
+  
+  const character = useGetCharacter();
 
   return (
     <div className="detail-container">
-      <div
+      {character.name ? 
+        <div
         className={`detail-card ${
           character.status === "Alive"
             ? "detail-card-alive"
@@ -43,6 +29,9 @@ export default function Detail() {
           <p>Location: {character.location?.name}</p>
         </div>
       </div>
+      :
+      <div className="loading"></div>
+      }
     </div>
   );
 }
