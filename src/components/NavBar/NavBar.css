@@ -19,19 +19,13 @@
     text-decoration: none;
     margin: 0 10px;
     transition: all 0.3s ease-in-out;
+    padding: 5px;
 }
 
 .navbar-links a:hover {
     color: rgb(173, 168, 168);
 }
 
-.rick-and-morty {
-    font-size: 40px;
-    font-weight: bold;
-    text-transform: uppercase;
-    text-align: center;
-    animation: changeColor 5s linear infinite alternate;
-}
 
 @media only screen and (max-width: 850px) {
     .rick-and-morty {
@@ -40,50 +34,63 @@
     /* navbar responsive */
     .navbar {
         flex-direction: column;
-        padding: 10px;
     }
-
+    
     .navbar-links {
         width: 100%;
         justify-content: center;
+        align-items: center;
         font-size: 16px;
     }
-
+    
     .navbar-links>* {
         margin-left: 10px;
     }
-
+    
     .navbar-search {
         width: 100%;
         margin-top: 10px;
     }
-
+    
     .navbar-logo {
-        font-size: 20px;
+        font-size: 26px;
     }
-
+    
     .navbar-links {
         display: flex;
     }
-
+    
     .navlink {
         font-size:16px;
     }
-
-
-
-    .logout-button .fa  {
-        font-size: 12px;
-
-    }
-
+    
+    
 }
+
+.rick-and-morty {
+    font-size: 40px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    /* text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 30px #00ff00, 0 0 40px #00ff00, 0 0 50px #00ff00, 0 0 60px #00ff00;
+    animation: animacion-neon 1s ease-in-out infinite alternate; */
+    animation: changeColor 5s linear infinite alternate;
+}
+
+/* @keyframes animacion-neon {
+  0% {
+    text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 30px #00ff00, 0 0 40px #00ff00, 0 0 50px #00ff00, 0 0 60px #00ff00;
+  }
+  100% {
+    text-shadow: 0 0 20px #ff0000, 0 0 30px #ff0000, 0 0 40px #ff0000, 0 0 50px #ff0000, 0 0 60px #ff0000, 0 0 70px #ff0000;
+  }
+} */
 
 @keyframes changeColor {
     0% {
         color: #F44336;
     }
-
+    
     25% {
         color: #FFEB3B;
     }
@@ -98,8 +105,11 @@
 
     100% {
         color: #9C27B0;
+
     }
 }
+
+
  
 
 .logout-button {
@@ -119,11 +129,13 @@
 /* navlink active css */
 
 .active {
-    background-color: rgb(48, 48, 49);
+    background-color: rgba(255, 0, 0, 0.629);
     border-radius: 5px;
-    padding: 5px;
 }
 
+.icon-logout {
+    font-size: 20px;
+}
 
 .Toastify__toast {
     display: flex;
