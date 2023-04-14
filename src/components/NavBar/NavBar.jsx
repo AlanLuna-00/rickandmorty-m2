@@ -35,9 +35,7 @@ const NavBar = ({ logout }) => {
     };
 
     const confirmLogout = () => {
-        // Lógica de logout
         logout();
-        // Cierra la notificación
         toast.dismiss();
     };
 

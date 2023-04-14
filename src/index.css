@@ -6,8 +6,9 @@
 
 body {
   font-family: 'Roboto', sans-serif;
-  background-color: black;
-  background-image: url('./galaxy-stars.png');
+  /* background-color: black;
+  background-image: url('./galaxy-stars.png'); */
+  background-color:#090b1a;
   height: 100vh;
 }
 

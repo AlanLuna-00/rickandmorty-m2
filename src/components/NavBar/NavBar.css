@@ -3,8 +3,9 @@
     justify-content: space-between;
     align-items: center;
     padding: 10px;
-    background-color: rgba(0, 0, 0, 0.195);
-    backdrop-filter: blur(5px);
+    /* background-color: rgba(0, 0, 0, 0.195); 
+    backdrop-filter: blur(5px); */
+    background-color: #343232;
     color: #fff;
 }
 
@@ -23,10 +24,6 @@
 .navbar-links a:hover {
     color: rgb(173, 168, 168);
 }
-
-
-
-
 
 .rick-and-morty {
     font-size: 40px;
