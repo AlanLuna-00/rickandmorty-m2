@@ -14,12 +14,13 @@ import toast, { Toaster } from 'react-hot-toast';
 function Landing() {
   const [Characters, setCharacters] = useState([]);
 
-  const URL = "https://be-a-rym.up.railway.app/api/character/";
-  const API_KEY = "1f7733c3f7cc.673ee192101ab1b561a7";
+  // const URL = "https://be-a-rym.up.railway.app/api/character/";
+  // const API_KEY = "1f7733c3f7cc.673ee192101ab1b561a7";
   const onSearch = (id) => {
-    fetch(`${URL}/${id}?key=${API_KEY}`)
+    fetch(`http://localhost:3001/rickandmorty/characters/${id}`)
       .then((res) => res.json())
       .then((data) => {
+        console.log(data)
         if (Characters.find((value) => value.id === data.id)) {
           toast.error("El dato es invalido o ya fue agregado");
         } else if (id === "" || id > 826 || id < 1) {

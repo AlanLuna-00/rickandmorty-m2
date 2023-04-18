@@ -6,7 +6,9 @@ export default function Cards({characters, onClose, onSearch}) {
    <SearchBar onSearch={onSearch} />
    <div className='container'>
       {characters.map((value, i) => {
-         return <Card
+         console.log(value.name)
+         return (
+          <Card
             key={i}
             id={value.id}
             name={value.name}
@@ -15,9 +17,10 @@ export default function Cards({characters, onClose, onSearch}) {
             gender={value.gender}
             origin={value.origin.name}
             image={value.image}
-            location={value.location.name}
+            // location={value.location.name}
             onClose={() => onClose(i)}
-         />
+         /> 
+         )
       })}
    </div>;
    </>

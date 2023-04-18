@@ -15,10 +15,10 @@ export const orderCards = (order) => ({ type: ORDER_CARDS, payload: order })
 
 export const getCharacterDetail = (id) => {
     return function (dispatch) {
-        const URL = "https://be-a-rym.up.railway.app/api/character/";
-        const API_KEY = "1f7733c3f7cc.673ee192101ab1b561a7";
+        // const URL = "https://be-a-rym.up.railway.app/api/character/";
+        // const API_KEY = "1f7733c3f7cc.673ee192101ab1b561a7";
 
-        fetch(`${URL}/${id}?key=${API_KEY}`)
+        fetch(`http://localhost:3001/rickandmorty/characters/${id}`)
             .then((res) => res.json())
             .then((data) => {
                 dispatch({ type: GET_CHARACTER_DETAIL, payload: data })
