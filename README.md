@@ -28,7 +28,7 @@ npm install
 ```
 * Para hacer funcionar la aplicación, debes ejecutar dos comandos:
 
-Para hacer funcionar la aplicación, debes ejecutar dos comandos:
+Dirígete a la carpeta ./client y ejecuta el siguiente comando para correr la app de React:
 ```bash
 npm start
 ```
