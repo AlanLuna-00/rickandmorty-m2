@@ -23,11 +23,12 @@ const Card = (props) => {
    }
 
    useEffect(() => {
-      myFavorites.forEach((fav) => {
-         if (fav.id === props.id) {
-            setFav(true);
-         }
-      });
+      const isFav = myFavorites.find(fav => fav.id === props.id)
+      if (isFav) {
+         setFav(true)
+      } else {
+         setFav(false)
+      }
    }, [myFavorites, props.id]);
 
    const addingFav = (name) => toast.success(`${name} agregado a favs ❤️`);

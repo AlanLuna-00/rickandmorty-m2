@@ -9,6 +9,7 @@ import Form from "../Form/Form";
 import Favorites from "../Favorites/Favorites";
 import Footer from "../Footer/Footer";
 import toast, { Toaster } from 'react-hot-toast';
+import axios from 'axios';
 
 
 function Landing() {
@@ -16,20 +17,23 @@ function Landing() {
 
   // const URL = "https://be-a-rym.up.railway.app/api/character/";
   // const API_KEY = "1f7733c3f7cc.673ee192101ab1b561a7";
-  const onSearch = (id) => {
-    fetch(`http://localhost:3001/rickandmorty/characters/${id}`)
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data)
-        if (Characters.find((value) => value.id === data.id)) {
-          toast.error("El dato es invalido o ya fue agregado");
-        } else if (id === "" || id > 826 || id < 1) {
-          toast.error('El dato es invalido o ya fue agregado');
-        } else {
-          setCharacters([...Characters, data]);
-        }
-      });
+  const onSearch = async (id) => {
+    try {
+      const response = await axios(`http://localhost:3001/rickandmorty/${id}`);
+      const data = response.data;
+      if (Characters.find((value) => value.id === data.id)) {
+        toast.error("El dato es invalido o ya fue agregado");
+      } else if (id === "" || id > 826 || id < 1) {
+        toast.error("El dato es invalido o ya fue agregado");
+      } else {
+        setCharacters([data, ...Characters]);
+      }
+    } catch (error) {
+      console.error(error);
+      toast.error("Hubo un error al procesar la solicitud");
+    }
   };
+
 
   const onClose = (id) => {
     setCharacters(Characters.filter((_value, i) => i !== parseInt(id)));
@@ -37,17 +41,26 @@ function Landing() {
 
   const navigate = useNavigate();
   const [access, setAccess] = useState(false);
-  const EMAIL = "alanluna@gmail.com";
-  const PASSWORD = "alan05";
 
-  const login = (form) => {
-    if (form.email === EMAIL && form.password === PASSWORD) {
-      setAccess(true);
-      navigate("/home");
-    } else {
-      setAccess(false);
+  const login = async (form) => {
+    try {
+      const { email, password } = form;
+      const URL = "http://localhost:3001/rickandmorty/";
+      const response = await axios.get(URL, {
+        params: {
+          email: email,
+          password: password
+        }
+      });
+      const { data } = response;
+      setAccess(data);
+      access && navigate("/home");
+    } catch (error) {
+      console.error(error);
+      toast.error("Hubo un error al procesar la solicitud");
     }
   };
+
 
   const logout = () => {
     setAccess(false);

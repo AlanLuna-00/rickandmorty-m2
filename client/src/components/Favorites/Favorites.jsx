@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { Link } from "react-router-dom";
 import { removeFav } from "../../redux/actions";
 import "./Favorites.css";
 import { filterCards, orderCards } from "../../redux/actions";
 import toast, { Toaster } from 'react-hot-toast';
+import Card from "../Card/Card";
 
 const Favorites = () => {
   const favorites = useSelector((state) => state.myFavorites);
@@ -25,10 +25,9 @@ const Favorites = () => {
   const handleOrderCards = (e) => {
     dispatch(orderCards(e.target.value));
     setAux(!aux)
-    console.log(aux)
   };
 
-
+  console.log(favorites)
   return (
     <>
       <div className="container-filters">
@@ -47,64 +46,27 @@ const Favorites = () => {
       </div>
 
       <div className="container-favorites">
-        {favorites.map((fav, i) => (
-          <div
-            key={i}
-            className={`card-pj ${fav.status === "Alive"
-              ? "alive"
-              : fav.status === "Dead"
-                ? "dead"
-                : ""
-              }`}
-          >
-            <img className="img" src={`${fav.image}`} alt={`${fav.name}`} />
-            <h1 className="name">{fav.name}</h1>
-            <h2
-              className={
-                fav.status === "Dead"
-                  ? "status_dead"
-                  : fav.status === "Alive"
-                    ? "status_alive"
-                    : "gender"
-              }
-            >
-              {fav.status === "unknown"
-                ? "Estado de vida desconocido"
-                : fav.status}
-            </h2>
-            <h2 className="gender">
-              {fav.gender}
-            </h2>
-            <h2 className="gender">
-              {fav.species}
-            </h2>
-            <h2 className="origin">
-              {fav.origin === "unknown"
-                ? "Procedencia desconocida"
-                : fav.origin}
-            </h2>
-            <Link to={`/detail/${fav.id}`}>
-              <button
-                className={
-                  fav.status === "Dead"
-                    ? "detail-dead"
-                    : fav.status === "Alive"
-                      ? "detail-alive"
-                      : "detail"
-                }
-              >
-                Detail
-              </button>
-            </Link>
-            <button
-              onClick={() => handleRemoveFav(fav.id, fav.name)}
-              className="favButton"
-            >
-              ❤️
-            </button>
+        {favorites.length === 0  ? 
+          <h1 style={{color:'white'}}>No hay favoritos 💔</h1>
+          :
+          favorites.map((fav, i) => (
+          <div key={i}>
+              <Card
+                key={i}
+                id={fav.id}
+                name={fav.name}
+                image={fav.image}
+                species={fav.species}
+                status={fav.status}
+                origin={fav.origin}
+                gender={fav.gender}
+                onClose={() => handleRemoveFav(fav.id, fav.name)}
+              />
             <Toaster position='top-left' />
           </div>
-        ))}
+
+        ))
+        }
       </div>
     </>
   );

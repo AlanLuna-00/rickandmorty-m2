@@ -11,15 +11,14 @@ const rootReducer = (state = initialState, action) => {
     case ADD_FAV:
       return {
         ...state,
-        allCharacters: [...state.allCharacters, action.payload],
-        myFavorites: [...state.myFavorites, action.payload],
+        allCharacters: action.payload,
+        myFavorites: action.payload,
       };
-    case REMOVE_FAV:
+    case REMOVE_FAV:  
       return {
         ...state,
-        myFavorites: [
-          ...state.myFavorites.filter((char) => char.id !== action.payload),
-        ],
+        allCharacters: action.payload,
+        myFavorites: action.payload,
       };
     case FILTER_CARDS:
       const allCharactersCopy = [...state.allCharacters];
@@ -50,11 +49,11 @@ const rootReducer = (state = initialState, action) => {
         ...state,
         characterDetail: action.payload,
       };
-      case CLEAN_CHARACTER_DETAIL:
-        return {
-          ...state,
-          characterDetail: {},
-        };
+    case CLEAN_CHARACTER_DETAIL:
+      return {
+        ...state,
+        characterDetail: {},
+      };
     default:
       return { ...state };
   }
