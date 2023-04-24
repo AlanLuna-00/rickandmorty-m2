@@ -17,7 +17,7 @@ En la parte del servidor, se modularizaron las rutas para mejorar la organizaci�
 En la capa de presentación, se desarrollaron varios componentes, destacando entre ellos: "Card", "SearchBar" y "Favorites". El componente "Card" se utilizó para iterar sobre el conjunto de personajes que se obtienen mediante el componente "SearchBar", el cual consume la información provista por el controlador "GetCharById" a través de la biblioteca "axios". Por otro lado, el componente "Favorites" utiliza el controlador "handleFavorites" para añadir o eliminar personajes de la lista de favoritos.
 
 En la capa de datos, se utilizó Redux como sistema de almacenamiento global, empleando sus "actions" y "reducers". Se crearon diferentes arrays para almacenar los personajes agregados y los que se agregaron a favoritos.
-## Como utilizar al codigo en tu computadora
+## Como utilizar el codigo en tu computadora
 *  Clona el repositorio con el siguiente comando en tu terminal:
 ```bash
 git clone https://github.com/AlanLuna-00/rickandmorty-m2.git
